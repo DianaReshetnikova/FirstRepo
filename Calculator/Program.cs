@@ -26,5 +26,15 @@ thirdStep: Console.WriteLine("Input second value: ");
         goto thirdStep;
     }
 
-    
+    double result = 0;
+    switch (sign)
+    {
+        case '+':
+            Console.WriteLine($"Result = {result = leftValue + rightValue}"); break;
+        case '-':
+            Console.WriteLine($"Result = {result = leftValue - rightValue}"); break;
+       
+        default:
+            break;
+    }
 }
