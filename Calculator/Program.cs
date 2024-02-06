@@ -9,9 +9,9 @@ while (true)
         continue;
     }
 
-secondStep: Console.WriteLine("Input sign: '+', '-'");
+secondStep: Console.WriteLine("Input sign: '+', '-', '*', '/'");
     char sign = Console.ReadKey().KeyChar;
-    if (sign != '+' && sign != '-')
+    if (sign != '+' && sign != '-' && sign != '*' && sign != '/')
     {
         Console.WriteLine("Incorrect sign. Try again");
         goto secondStep;
@@ -33,7 +33,14 @@ thirdStep: Console.WriteLine("Input second value: ");
             Console.WriteLine($"Result = {result = leftValue + rightValue}"); break;
         case '-':
             Console.WriteLine($"Result = {result = leftValue - rightValue}"); break;
-       
+        case '*':
+            Console.WriteLine($"Result = {result = leftValue * rightValue}"); break;
+        case '/':
+            {
+                if (rightValue == 0)
+                    Console.WriteLine("Division by 0 is not possible. Try again");
+                else Console.WriteLine($"Result = {result = leftValue / rightValue}"); break;
+            }
         default:
             break;
     }
