@@ -1,4 +1,5 @@
-﻿using System.Transactions;
+﻿using System.Diagnostics.Metrics;
+using System.Transactions;
 
 while (true)
 {
@@ -44,4 +45,8 @@ thirdStep: Console.WriteLine("Input second value: ");
         default:
             break;
     }
+
+    Console.WriteLine("To repeat, enter the enter key. If you want to go out enter 'quit'");
+    if (Console.ReadLine() == "quit")
+        return;
 }
